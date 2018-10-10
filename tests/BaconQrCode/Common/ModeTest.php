@@ -9,7 +9,7 @@
 
 namespace BaconQrCode\Common;
 
-use PHPUnit_Framework_TestCase as TestCase;
+use PHPUnit\Framework\TestCase;
 
 class ModeTest extends TestCase
 {
@@ -33,7 +33,7 @@ class ModeTest extends TestCase
 
     public function testInvalidModeThrowsException()
     {
-        $this->setExpectedException(
+        $this->expectException(
             'BaconQrCode\Exception\UnexpectedValueException',
             'Value not a const in enum BaconQrCode\Common\Mode'
         );

@@ -9,7 +9,7 @@
 
 namespace BaconQrCode\Common;
 
-use PHPUnit_Framework_TestCase as TestCase;
+use PHPUnit\Framework\TestCase;
 
 class ErrorCorrectionLevelTest extends TestCase
 {
@@ -31,7 +31,7 @@ class ErrorCorrectionLevelTest extends TestCase
 
     public function testInvalidErrorCorrectionLevelThrowsException()
     {
-        $this->setExpectedException(
+        $this->expectException(
             'BaconQrCode\Exception\UnexpectedValueException',
             'Value not a const in enum BaconQrCode\Common\ErrorCorrectionLevel'
         );
