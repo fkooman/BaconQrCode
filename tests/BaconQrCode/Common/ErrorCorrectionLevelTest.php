@@ -29,12 +29,12 @@ class ErrorCorrectionLevelTest extends TestCase
         $this->assertEquals(0x3, ErrorCorrectionLevel::Q);
     }
 
+    /**
+     * @expectedException BaconQrCode\Exception\UnexpectedValueException
+     * @expectedExceptionMessage Value not a const in enum BaconQrCode\Common\ErrorCorrectionLevel
+     */
     public function testInvalidErrorCorrectionLevelThrowsException()
     {
-        $this->expectException(
-            'BaconQrCode\Exception\UnexpectedValueException',
-            'Value not a const in enum BaconQrCode\Common\ErrorCorrectionLevel'
-        );
         new ErrorCorrectionLevel(4);
     }
 }

@@ -31,12 +31,12 @@ class ModeTest extends TestCase
         $this->assertEquals(0x8, Mode::KANJI);
     }
 
+    /**
+     * @expectedException BaconQrCode\Exception\UnexpectedValueException
+     * @expectedExceptionMessage Value not a const in enum BaconQrCode\Common\Mode
+     */
     public function testInvalidModeThrowsException()
     {
-        $this->expectException(
-            'BaconQrCode\Exception\UnexpectedValueException',
-            'Value not a const in enum BaconQrCode\Common\Mode'
-        );
         new Mode(10);
     }
 }
